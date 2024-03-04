@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
-
+#I used csv file and made a pipeline
 data = pd.read_csv('C:\Users\M Wen\Desktop\Python pipeline\data\Cookingdata.csv')
 
 data = np.array(data)
@@ -16,14 +16,15 @@ data_train = data[1000:m]
 Y_train = data_train[0]
 X_train = data_train[1:n]
 
-###parameters
+###parameters 
+#weight and biases
 def init_params():
     W1 = np.random.rand(10, 10)
     b1 = np.random.rand(10,9)
     W2 = np.random.rand(10,9)
     b2 = np.random.rand(10,1)
     return W1,b1,W2,b2
-
+# ReLU activation layer function
 def ReLU(Z):
     return np.maximum(0, Z)
 
@@ -35,7 +36,7 @@ def forward_prop(W1,b1,W2,b2, X):
     A1 = ReLU(Z1)
     Z2 = W2.dot(X) + b2
     A2 = softmax(A1)
-    
+# for one hot encoding
 def one_hot(Y):
     one_hot_Y = np.zeros((Y.size, Y.max)+1)
     one_hot_Y[np.arange(Y.size,Y)]

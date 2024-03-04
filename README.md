@@ -1,2 +1,2 @@
 # openmath
-Want to make openmath ai
+Want to make REPO for ML/AI projs use as a dictionary for future projects
